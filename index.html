@@ -6,7 +6,7 @@
 <title>النادي العلمي – ثانوية أحمد كندي</title>
 
 <style>
-/* ========== ROOT + GLOBAL ========== */
+/* ========== ROOT ========== */
 :root{
   --bg:#061021;
   --card:#0c1520;
@@ -51,11 +51,27 @@ h1.title{margin:0;font-size:18px}
   box-shadow:0 10px 30px rgba(0,230,214,0.14);
 }
 
-/* ========== HERO ========== */
+/* ========== HERO SECTION ========== */
 .hero{
+  max-width:1100px;margin:32px auto;padding:0 20px;
+}
+
+/* BIG IMAGE */
+.big-image{
+  width:100%;
+  height:260px;
+  background:url('assets/hero.jpg') center/cover no-repeat;
+  border-radius:14px;
+  box-shadow:0 10px 40px rgba(0,0,0,0.45);
+  margin-bottom:24px;
+}
+
+/* TEXT + ICONS CONTAINER */
+.hero-box{
   display:flex;gap:24px;align-items:center;justify-content:space-between;
-  padding:48px;max-width:1100px;margin:28px auto;
-  border-radius:14px;background:rgba(255,255,255,0.02);
+  padding:32px;
+  background:rgba(255,255,255,0.03);
+  border-radius:14px;
   box-shadow:0 10px 40px rgba(2,8,20,0.6);
 }
 .hero-left{flex:1}
@@ -68,9 +84,9 @@ h1.title{margin:0;font-size:18px}
   font-size:13px;color:var(--muted);font-weight:600;
 }
 
-/* ========== HERO VISUAL ========== */
+/* SMALL VISUAL ICONS */
 .hero-right{
-  width:420px;max-width:42%;height:260px;position:relative;
+  width:420px;max-width:42%;height:220px;position:relative;
   display:flex;align-items:center;justify-content:center;
 }
 .card-visual{
@@ -84,11 +100,8 @@ h1.title{margin:0;font-size:18px}
   position:absolute;width:84px;height:84px;
   background:rgba(255,255,255,0.03);
   border-radius:12px;display:grid;place-items:center;
-  box-shadow:0 8px 30px rgba(2,8,20,0.6);
 }
 .visual-item svg{width:44px;height:44px}
-
-/* positions */
 .v1{top:18px;right:22px}
 .v2{bottom:20px;left:28px}
 .v3{top:80px;left:50px}
@@ -101,21 +114,54 @@ h1.title{margin:0;font-size:18px}
 .card{
   background:var(--card);padding:18px;border-radius:12px;
   border:1px solid rgba(255,255,255,0.05);
-  box-shadow:0 8px 30px rgba(1,6,12,0.6)
 }
 .card h3{margin:6px 0 8px;color:var(--accent);font-size:19px}
 .card p{color:var(--muted);font-size:14px;line-height:1.6}
 
+/* ========== SLIDER ========== */
+.slider-title{
+  text-align:center;
+  margin:40px 0 16px;
+  font-size:22px;
+  color:var(--accent2);
+}
+
+.slider{
+  max-width:1100px;
+  margin:0 auto 60px;
+  overflow:hidden;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,0.06);
+}
+
+.slider-track{
+  display:flex;
+  width:max-content;
+  animation:scroll 20s linear infinite;
+}
+
+.slider img{
+  width:300px;
+  height:180px;
+  object-fit:cover;
+  border-right:2px solid rgba(255,255,255,0.06);
+}
+
+@keyframes scroll{
+  0%{transform:translateX(0)}
+  100%{transform:translateX(-50%)}
+}
+
 /* ========== FOOTER ========== */
 footer{
-  max-width:1100px;margin:28px auto 60px;
+  max-width:1100px;margin:40px auto;padding:18px;
   text-align:center;color:var(--muted);font-size:13px;
 }
 
 /* ========== RESPONSIVE ========== */
-@media (max-width:980px){
-  .hero{flex-direction:column;padding:28px}
-  .hero-right{width:100%;max-width:100%;height:230px}
+@media (max-width:900px){
+  .hero-box{flex-direction:column;padding:20px}
+  .hero-right{width:100%;max-width:100%}
   .grid{grid-template-columns:1fr}
 }
 </style>
@@ -135,59 +181,58 @@ footer{
   <a href="register.html" class="cta">سجّل الآن</a>
 </header>
 
-<!-- ========== HERO SECTION ========== -->
+<!-- ========== BIG IMAGE AT TOP ========== -->
 <section class="hero">
-  <div class="hero-left">
-    <h2>مرحباً بك في النادي العلمي المدرسي</h2>
-    <p>
-      نقدم للتلاميذ أنشطة وتجارب علمية بسيطة وآمنة في مجالات العلوم الطبيعية والفيزياء والكيمياء،
-      بهدف تنمية الفضول العلمي وصقل مهارات البحث والاكتشاف داخل المؤسسة.
-    </p>
+  <div class="big-image"></div>
 
-    <div class="features">
-      <span class="chip">🧪 كيمياء</span>
-      <span class="chip">🧬 بيولوجيا</span>
-      <span class="chip">⚡ فيزياء</span>
+  <!-- hero content -->
+  <div class="hero-box">
+    <div class="hero-left">
+      <h2>مرحباً بك في النادي العلمي المدرسي</h2>
+      <p>
+        نقدم للتلاميذ أنشطة وتجارب علمية بسيطة وآمنة في مجالات العلوم الطبيعية والفيزياء والكيمياء،
+        بهدف تنمية الفضول العلمي وصقل مهارات البحث والاكتشاف داخل المؤسسة.
+      </p>
+      <div class="features">
+        <span class="chip">🧪 كيمياء</span>
+        <span class="chip">🧬 بيولوجيا</span>
+        <span class="chip">⚡ فيزياء</span>
+      </div>
     </div>
-  </div>
 
-  <div class="hero-right">
-    <div class="card-visual">
-      
-      <!-- DNA -->
-      <div class="visual-item v1">
-        <svg viewBox="0 0 24 24" fill="none">
-          <path d="M6 2c0 5 4 4 4 10s-4 5-4 10" stroke="#00e6d6" stroke-width="1.6" stroke-linecap="round"/>
-          <path d="M18 2c0 5-4 4-4 10s4 5 4 10" stroke="#39f0ff" stroke-width="1.6" stroke-linecap="round"/>
-        </svg>
-      </div>
+    <div class="hero-right">
+      <div class="card-visual">
+        <div class="visual-item v1">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M6 2c0 5 4 4 4 10s-4 5-4 10" stroke="#00e6d6" stroke-width="1.6"/>
+            <path d="M18 2c0 5-4 4-4 10s4 5 4 10" stroke="#39f0ff" stroke-width="1.6"/>
+          </svg>
+        </div>
 
-      <!-- Microscope -->
-      <div class="visual-item v2">
-        <svg viewBox="0 0 24 24" fill="none">
-          <path d="M7 14v1c0 1 .9 2 2 2h6" stroke="#39f0ff" stroke-width="1.4"/>
-          <path d="M19 21H5" stroke="#00e6d6" stroke-width="1.2"/>
-          <circle cx="11" cy="7" r="1.2" fill="#0b2333"/>
-        </svg>
-      </div>
+        <div class="visual-item v2">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M7 14v1c0 1 .9 2 2 2h6" stroke="#39f0ff" stroke-width="1.4"/>
+            <path d="M19 21H5" stroke="#00e6d6" stroke-width="1.2"/>
+          </svg>
+        </div>
 
-      <!-- Atom -->
-      <div class="visual-item v3">
-        <svg viewBox="0 0 24 24" fill="none">
-          <circle cx="12" cy="12" r="1.5" fill="#002b2b"/>
-          <path d="M2 12c4.5-2 7-5 10-7 3 2 5.5 5 10 7-4.5 2-7 5-10 7-3-2-5.5-5-10-7z"
-            stroke="#00e6d6" stroke-width="1.3"/>
-        </svg>
-      </div>
+        <div class="visual-item v3">
+          <svg viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="1.5" fill="#002b2b"/>
+            <path d="M2 12c4.5-2 7-5 10-7 3 2 5.5 5 10 7-4.5 2-7 5-10 7-3-2-5.5-5-10-7z"
+              stroke="#00e6d6" stroke-width="1.3"/>
+          </svg>
+        </div>
 
-      <div style="position:relative;z-index:2;color:#8afff5;font-weight:700;font-size:20px;">
-        النادي العلمي
+        <div style="position:relative;z-index:2;color:#8afff5;font-weight:700;font-size:20px;">
+          النادي العلمي
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ========== GRID SECTION (UPDATED) ========== -->
+<!-- ========== CARDS SECTION ========== -->
 <section class="grid">
 
   <div class="card">
@@ -202,40 +247,45 @@ footer{
     <h3>🧬 أنشطة علمية تطبيقية</h3>
     <p>
       مشاهدة العينات تحت المجهر، استكشاف الخلايا والكائنات الدقيقة،
-      وفهم الظواهر الطبيعية عبر تجارب سهلة وممتعة.
+      وفهم الظواهر الطبيعية عبر تجارب ممتعة وسهلة.
     </p>
   </div>
 
   <div class="card">
     <h3>🔧 مهارات وتقنيات مدرسية</h3>
     <p>
-      صنع نماذج علمية، تركيب دوائر كهربائية بسيطة، وإنجاز تجارب تطبيقية
+      صنع نماذج علمية، تركيب دوائر كهربائية بسيطة، وإنجاز أنشطة تطبيقية
       تعتمد على مواد بسيطة متوفرة بالمؤسسة.
     </p>
   </div>
 
 </section>
 
+<!-- ========== SLIDER ========== -->
+<h2 class="slider-title">📸 صور من أنشطة النادي</h2>
+
+<div class="slider">
+  <div class="slider-track">
+
+    <img src="assets/p1.jpg" alt="">
+    <img src="assets/p2.jpg" alt="">
+    <img src="assets/p3.jpg" alt="">
+    <img src="assets/p4.jpg" alt="">
+    <img src="assets/p5.jpg" alt="">
+
+    <!-- التكرار لتأثير الانزلاق اللانهائي -->
+    <img src="assets/p1.jpg" alt="">
+    <img src="assets/p2.jpg" alt="">
+    <img src="assets/p3.jpg" alt="">
+    <img src="assets/p4.jpg" alt="">
+    <img src="assets/p5.jpg" alt="">
+  </div>
+</div>
+
 <!-- ========== FOOTER ========== -->
 <footer>
   ثانوية أحمد كندي — السنة الدراسية 2025/2026 — © النادي العلمي
 </footer>
-
-<script>
-/* floating animation */
-document.querySelectorAll('.visual-item').forEach((el,i)=>{
-  const amp = 8 + i*3;
-  const dur = 3500 + i*600;
-  el.animate(
-    [
-      { transform: 'translateY(0)'},
-      { transform: `translateY(${-amp}px)`},
-      { transform: 'translateY(0)'}
-    ],
-    { duration: dur, iterations: Infinity, easing: 'ease-in-out' }
-  );
-});
-</script>
 
 </body>
 </html>
