@@ -4,78 +4,126 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>النادي العلمي – ثانوية أحمد كندي</title>
+
 <style>
-/* --- Embedded Dark Sci CSS (self-contained) --- */
+/* ========== ROOT + GLOBAL ========== */
 :root{
   --bg:#061021;
   --card:#0c1520;
   --accent:#00e6d6;
+  --accent2:#39f0ff;
   --muted:#9ac7d6;
-  --glass: rgba(255,255,255,0.03);
   font-family: "Cairo", system-ui, sans-serif;
 }
 *{box-sizing:border-box}
-html,body{height:100%;margin:0;background:
-  radial-gradient(800px 400px at 10% 10%, rgba(0,230,214,0.04), transparent 6%),
-  radial-gradient(800px 400px at 90% 90%, rgba(0,150,255,0.03), transparent 6%),
-  var(--bg); color:#e7f9ff}
-a{color:inherit}
+body{
+  margin:0;
+  background:
+    radial-gradient(800px 400px at 10% 10%, rgba(0,230,214,0.04), transparent 6%),
+    radial-gradient(800px 400px at 90% 90%, rgba(0,150,255,0.03), transparent 6%),
+    var(--bg);
+  color:#e7f9ff;
+}
+
+/* ========== HEADER ========== */
 .header{
-  display:flex;align-items:center;justify-content:space-between;padding:20px 28px;
-  backdrop-filter: blur(6px); background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-  border-bottom:1px solid rgba(255,255,255,0.02);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:20px 28px;
+  backdrop-filter: blur(6px);
+  background: rgba(255,255,255,0.02);
+  border-bottom:1px solid rgba(255,255,255,0.06);
 }
 .brand{display:flex;gap:12px;align-items:center}
-.logo-circle{width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#39f0ff);display:grid;place-items:center;font-weight:800;color:#012;}
-h1.title{font-size:18px;margin:0}
+.logo-circle{
+  width:48px;height:48px;border-radius:10px;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  display:grid;place-items:center;
+  font-size:24px;font-weight:800;color:#012;
+}
+h1.title{margin:0;font-size:18px}
 .header p{margin:0;color:var(--muted);font-size:13px}
 
-/* Hero */
+/* CTA */
+.cta{
+  padding:12px 18px;border-radius:10px;
+  background:linear-gradient(90deg,var(--accent),var(--accent2));
+  color:#002b2b;font-weight:700;text-decoration:none;
+  box-shadow:0 10px 30px rgba(0,230,214,0.14);
+}
+
+/* ========== HERO ========== */
 .hero{
-  display:flex;gap:24px;align-items:center;justify-content:space-between;padding:48px;
-  max-width:1100px;margin:28px auto;border-radius:14px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-  box-shadow: 0 10px 40px rgba(2,8,20,0.6);
+  display:flex;gap:24px;align-items:center;justify-content:space-between;
+  padding:48px;max-width:1100px;margin:28px auto;
+  border-radius:14px;background:rgba(255,255,255,0.02);
+  box-shadow:0 10px 40px rgba(2,8,20,0.6);
 }
-.hero-left{flex:1;min-width:240px}
-.hero-left h2{font-size:28px;margin:0 0 8px;color:var(--accent)}
-.hero-left p{color:var(--muted);margin:0 0 18px;line-height:1.6;max-width:56ch}
-.cta{display:inline-block;padding:12px 18px;border-radius:10px;background:linear-gradient(90deg,var(--accent),#39f0ff);color:#002b2b;font-weight:700;text-decoration:none;box-shadow:0 10px 30px rgba(0,230,214,0.08)}
-.features{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
-.chip{background:linear-gradient(90deg, rgba(0,230,214,0.06), rgba(57,240,255,0.04));padding:8px 12px;border-radius:999px;color:var(--muted);font-weight:700;font-size:13px}
+.hero-left{flex:1}
+.hero-left h2{margin:0 0 8px;color:var(--accent);font-size:29px}
+.hero-left p{color:var(--muted);line-height:1.6;max-width:60ch}
+.features{display:flex;gap:8px;margin-top:18px;flex-wrap:wrap}
+.chip{
+  padding:8px 12px;border-radius:999px;
+  background:rgba(0,230,214,0.08);
+  font-size:13px;color:var(--muted);font-weight:600;
+}
 
-/* hero-right visuals */
-.hero-right{width:420px;max-width:42%;position:relative;height:260px;display:flex;align-items:center;justify-content:center}
+/* ========== HERO VISUAL ========== */
+.hero-right{
+  width:420px;max-width:42%;height:260px;position:relative;
+  display:flex;align-items:center;justify-content:center;
+}
 .card-visual{
-  width:100%;height:100%;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-  display:grid;place-items:center;overflow:hidden;border:1px solid rgba(255,255,255,0.02);
-  position:relative;
+  width:100%;height:100%;border-radius:12px;
+  background:rgba(255,255,255,0.02);
+  border:1px solid rgba(255,255,255,0.05);
+  display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;
 }
-.visual-item{position:absolute;width:84px;height:84px;border-radius:12px;background:var(--glass);display:grid;place-items:center;box-shadow: 0 8px 30px rgba(2,8,20,0.6);transition:transform .35s}
-.v1{top:18px;right:22px;transform:translateY(0)}
-.v2{bottom:20px;left:28px;transform:translateY(0)}
-.v3{top:80px;left:60px;transform:translateY(0)}
-.visual-item svg{width:44px;height:44px;filter:drop-shadow(0 6px 18px rgba(0,0,0,0.4))}
+.visual-item{
+  position:absolute;width:84px;height:84px;
+  background:rgba(255,255,255,0.03);
+  border-radius:12px;display:grid;place-items:center;
+  box-shadow:0 8px 30px rgba(2,8,20,0.6);
+}
+.visual-item svg{width:44px;height:44px}
 
-/* Cards Section */
-.grid{max-width:1100px;margin:24px auto;padding:0 20px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.card{background:var(--card);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.02);box-shadow:0 8px 30px rgba(1,6,12,0.6)}
-.card h3{margin:6px 0 8px;color:var(--accent)}
-.card p{color:var(--muted);font-size:14px;line-height:1.5}
+/* positions */
+.v1{top:18px;right:22px}
+.v2{bottom:20px;left:28px}
+.v3{top:80px;left:50px}
 
-/* Footer */
-footer{max-width:1100px;margin:28px auto 60px;padding:18px;text-align:center;color:var(--muted);font-size:13px}
+/* ========== CARDS GRID ========== */
+.grid{
+  max-width:1100px;margin:24px auto;padding:0 20px;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:18px;
+}
+.card{
+  background:var(--card);padding:18px;border-radius:12px;
+  border:1px solid rgba(255,255,255,0.05);
+  box-shadow:0 8px 30px rgba(1,6,12,0.6)
+}
+.card h3{margin:6px 0 8px;color:var(--accent);font-size:19px}
+.card p{color:var(--muted);font-size:14px;line-height:1.6}
 
-/* responsive */
+/* ========== FOOTER ========== */
+footer{
+  max-width:1100px;margin:28px auto 60px;
+  text-align:center;color:var(--muted);font-size:13px;
+}
+
+/* ========== RESPONSIVE ========== */
 @media (max-width:980px){
   .hero{flex-direction:column;padding:28px}
-  .hero-right{width:100%;max-width:100%;height:220px}
-  .grid{grid-template-columns:1fr; padding:0 12px}
-  .header{padding:12px}
+  .hero-right{width:100%;max-width:100%;height:230px}
+  .grid{grid-template-columns:1fr}
 }
 </style>
 </head>
+
 <body>
 
+<!-- ========== HEADER ========== -->
 <header class="header">
   <div class="brand">
     <div class="logo-circle">🔬</div>
@@ -84,92 +132,109 @@ footer{max-width:1100px;margin:28px auto 60px;padding:18px;text-align:center;col
       <p>اكتشف، جرّب، أبدع!</p>
     </div>
   </div>
-  <a class="cta" href="register.html">سجّل الآن</a>
+  <a href="register.html" class="cta">سجّل الآن</a>
 </header>
 
-<section class="hero" aria-label="Hero">
+<!-- ========== HERO SECTION ========== -->
+<section class="hero">
   <div class="hero-left">
-    <h2>مرحباً بك في مركز الإبداع العلمي</h2>
-    <p>انضم لأوراش عمل، تجارب معملية آمنة، مسابقات علمية ومشاريع تطبيقية في البيولوجيا، الكيمياء، والفيزياء — كل ذلك ضمن بيئة ممتعة ومحترفة.</p>
+    <h2>مرحباً بك في النادي العلمي المدرسي</h2>
+    <p>
+      نقدم للتلاميذ أنشطة وتجارب علمية بسيطة وآمنة في مجالات العلوم الطبيعية والفيزياء والكيمياء،
+      بهدف تنمية الفضول العلمي وصقل مهارات البحث والاكتشاف داخل المؤسسة.
+    </p>
+
     <div class="features">
+      <span class="chip">🧪 كيمياء</span>
       <span class="chip">🧬 بيولوجيا</span>
-      <span class="chip">⚗️ كيمياء</span>
-      <span class="chip">⚛️ فيزياء</span>
+      <span class="chip">⚡ فيزياء</span>
     </div>
   </div>
 
   <div class="hero-right">
-    <div class="card-visual" role="img" aria-label="صور علمية">
-      <!-- inline SVG icons to avoid missing assets -->
-      <div class="visual-item v1" title="DNA">
-        <!-- DNA simple SVG -->
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M6 2c0 5 4 4 4 10s-4 5-4 10" stroke="#00e6d6" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M18 2c0 5-4 4-4 10s4 5 4 10" stroke="#39f0ff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <div class="card-visual">
+      
+      <!-- DNA -->
+      <div class="visual-item v1">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M6 2c0 5 4 4 4 10s-4 5-4 10" stroke="#00e6d6" stroke-width="1.6" stroke-linecap="round"/>
+          <path d="M18 2c0 5-4 4-4 10s4 5 4 10" stroke="#39f0ff" stroke-width="1.6" stroke-linecap="round"/>
         </svg>
       </div>
 
-      <div class="visual-item v2" title="Microscope">
-        <!-- Microscope SVG -->
+      <!-- Microscope -->
+      <div class="visual-item v2">
         <svg viewBox="0 0 24 24" fill="none">
-          <path d="M7 14v1c0 1 .9 2 2 2h6" stroke="#39f0ff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M7 14v1c0 1 .9 2 2 2h6" stroke="#39f0ff" stroke-width="1.4"/>
           <path d="M19 21H5" stroke="#00e6d6" stroke-width="1.2"/>
           <circle cx="11" cy="7" r="1.2" fill="#0b2333"/>
         </svg>
       </div>
 
-      <div class="visual-item v3" title="Atom">
-        <!-- Atom SVG -->
+      <!-- Atom -->
+      <div class="visual-item v3">
         <svg viewBox="0 0 24 24" fill="none">
           <circle cx="12" cy="12" r="1.5" fill="#002b2b"/>
-          <path d="M2 12c4.5-2 7-5 10-7 3 2 5.5 5 10 7-4.5 2-7 5-10 7-3-2-5.5-5-10-7z" stroke="#00e6d6" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M2 12c4.5-2 7-5 10-7 3 2 5.5 5 10 7-4.5 2-7 5-10 7-3-2-5.5-5-10-7z"
+            stroke="#00e6d6" stroke-width="1.3"/>
         </svg>
       </div>
 
-      <!-- subtle center word -->
-      <div style="position:relative;z-index:1;color:#80f7ef;font-weight:700;font-size:22px;">النادي العلمي</div>
+      <div style="position:relative;z-index:2;color:#8afff5;font-weight:700;font-size:20px;">
+        النادي العلمي
+      </div>
     </div>
   </div>
 </section>
 
-<section class="grid" aria-label="مجالات النادي">
+<!-- ========== GRID SECTION (UPDATED) ========== -->
+<section class="grid">
+
   <div class="card">
-    <h3>🧪 التجارب المختبرية</h3>
-    <p>تجارب عملية في أدوات آمنة، شرح مبسط، وسيناريوهات تطبيقية مشتركة تحت إشراف المشرفين.</p>
+    <h3>🧪 تجارب علمية بسيطة</h3>
+    <p>
+      إنجاز تجارب مدرسية آمنة في الكيمياء والفيزياء باستعمال أدوات المؤسسة،
+      مع شرح مبسط للخطوات ومرافقة الأساتذة.
+    </p>
   </div>
 
   <div class="card">
-    <h3>🔭 الفلك والفضاء</h3>
-    <p>ملاحظات ليلية، استخدام تلسكوبات بسيطة، ودورات عن أساسيات الفلك والكون.</p>
+    <h3>🧬 أنشطة علمية تطبيقية</h3>
+    <p>
+      مشاهدة العينات تحت المجهر، استكشاف الخلايا والكائنات الدقيقة،
+      وفهم الظواهر الطبيعية عبر تجارب سهلة وممتعة.
+    </p>
   </div>
 
   <div class="card">
-    <h3>🤖 مشاريع وتكنولوجيا</h3>
-    <p>تعلم البرمجة، الإلكترونيات البسيطة، والروبوتات مع تطبيقات عملية للمشاريع العلمية.</p>
+    <h3>🔧 مهارات وتقنيات مدرسية</h3>
+    <p>
+      صنع نماذج علمية، تركيب دوائر كهربائية بسيطة، وإنجاز تجارب تطبيقية
+      تعتمد على مواد بسيطة متوفرة بالمؤسسة.
+    </p>
   </div>
+
 </section>
 
+<!-- ========== FOOTER ========== -->
 <footer>
   ثانوية أحمد كندي — السنة الدراسية 2025/2026 — © النادي العلمي
 </footer>
 
 <script>
-/* minimal floating animations for visual items */
+/* floating animation */
 document.querySelectorAll('.visual-item').forEach((el,i)=>{
   const amp = 8 + i*3;
   const dur = 3500 + i*600;
-  function anim(){
-    el.animate([
+  el.animate(
+    [
       { transform: 'translateY(0)'},
       { transform: `translateY(${-amp}px)`},
       { transform: 'translateY(0)'}
-    ], { duration: dur, iterations: Infinity, direction: 'alternate', easing: 'ease-in-out' });
-  }
-  anim();
+    ],
+    { duration: dur, iterations: Infinity, easing: 'ease-in-out' }
+  );
 });
-
-/* (optional) small safety: if register.html missing, change CTA to alert */
-if(!location.href){} // noop
 </script>
 
 </body>
