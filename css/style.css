@@ -136,3 +136,86 @@ footer {
     margin-top: 80px;
     opacity: 0.9;
 }
+
+/* ========== GALLERY ========== */
+.gallery{
+  max-width:1100px;
+  margin:40px auto;
+  padding:0 20px;
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(250px, 1fr));
+  gap:16px;
+}
+
+.gallery img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+  border-radius:12px;
+  cursor:pointer;
+  transition:0.2s;
+  border:1px solid rgba(255,255,255,0.08);
+}
+
+.gallery img:hover{
+  transform:scale(1.03);
+  box-shadow:0 8px 25px rgba(0,230,214,0.2);
+}
+
+/* ========== LIGHTBOX ========== */
+.lightbox{
+  display:none;
+  position:fixed;
+  z-index:9999;
+  top:0;left:0;
+  width:100%;height:100%;
+  background:rgba(0,0,0,0.85);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.lightbox-img{
+  max-width:85%;
+  max-height:85%;
+  border-radius:12px;
+  box-shadow:0 0 25px rgba(0,230,214,0.4);
+}
+
+/* Close Button */
+.lightbox .close{
+  position:absolute;
+  top:20px;right:30px;
+  font-size:40px;
+  color:#fff;
+  cursor:pointer;
+  transition:0.2s;
+}
+.lightbox .close:hover{color:#00e6d6}
+
+/* Navigation Buttons */
+.lightbox-nav{
+  position:absolute;
+  top:50%;
+  font-size:60px;
+  color:#fff;
+  cursor:pointer;
+  padding:10px 16px;
+  transform:translateY(-50%);
+  transition:0.2s;
+}
+
+.lightbox-nav:hover{color:#00e6d6}
+
+.prev{left:30px}
+.next{right:30px}
+
+/* Responsive */
+@media(max-width:600px){
+  .gallery img{
+    height:160px;
+  }
+  .lightbox-nav{
+    font-size:40px;
+  }
+}
