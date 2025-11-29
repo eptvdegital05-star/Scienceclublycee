@@ -1,30 +1,76 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>النادي العلمي – ثانوية أحمد كندي</title>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>النادي العلمي – ثانوية أحمد كندي</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<section class="hero">
-    <h1>🔬 النادي العلمي – ثانوية أحمد كندي</h1>
-    <p>اكتشف، جرّب، أبدع!</p>
-    <a class="btn" href="register.html">سجّل الآن</a>
-</section>
+    <!-- خلفية الفضاء — Particles -->
+    <canvas id="bgParticles"></canvas>
 
-<section class="section">
-    <h2>مرحباً بك!</h2>
-    <p>شارك معنا لتعيش متعة العلوم الطبيعية والفيزيائية. التسجيل مفتوح لتلاميذ المدرسة.</p>
-</section>
+    <!-- شريط علوي -->
+    <header class="main-header">
+        <div class="logo">
+            <img src="assets/atom.svg" alt="">
+            <h1>النادي العلمي – ثانوية أحمد كندي</h1>
+        </div>
+        <a href="register.html" class="btn">التسجيل الآن</a>
+    </header>
 
-<footer>
-ثانوية أحمد كندي • 2025/2026 • جميع الحقوق محفوظة
-</footer>
+    <!-- قسم الهيرو -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>🔬 اكتشف. جرّب. أبدع.</h2>
+            <p>انضم إلى أقوى نادي علمي في المدرسة حيث الفيزياء، الكيمياء، علوم الحياة، الابتكار والفضول العلمي.</p>
 
-<script src="js/app.js"></script>
+            <a href="register.html" class="cta">سجل الآن وانطلق!</a>
+        </div>
+
+        <div class="hero-graphics">
+            <img src="assets/dna.png" class="dna" alt="">
+            <img src="assets/microscope.png" class="micro" alt="">
+            <img src="assets/atom2.png" class="atom" alt="">
+        </div>
+    </section>
+
+    <!-- قسم المجالات العلمية -->
+    <section class="fields">
+        <h2>ماذا ستتعلم معنا؟</h2>
+
+        <div class="field-grid">
+
+            <div class="field-card">
+                <img src="assets/bio.svg" alt="">
+                <h3>علوم الحياة</h3>
+                <p>عالم الخلايا، DNA، النباتات، الأحياء الدقيقة، والتجارب البيولوجية.</p>
+            </div>
+
+            <div class="field-card">
+                <img src="assets/chem.svg" alt="">
+                <h3>الكيمياء</h3>
+                <p>معادلات، تفاعلات، مختبرات، تجارب آمنة وممتعة.</p>
+            </div>
+
+            <div class="field-card">
+                <img src="assets/physics.svg" alt="">
+                <h3>الفيزياء</h3>
+                <p>دوائر كهربائية، ميكانيك، بصريات، ضوء، طاقة، وعلوم الفضاء.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- الفوتر -->
+    <footer>
+        <p>ثانوية أحمد كندي – النادي العلمي © 2025</p>
+    </footer>
+
+<script src="script.js"></script>
+
 </body>
 </html>
