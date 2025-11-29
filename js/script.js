@@ -36,3 +36,49 @@ function animate(){
     requestAnimationFrame(animate);
 }
 animate();
+
+<script>
+const galleryImages = document.querySelectorAll('.gallery img');
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const closeBtn = document.querySelector('.lightbox .close');
+
+let currentIndex = 0;
+
+// افتح الصورة
+galleryImages.forEach((img, index) => {
+  img.addEventListener('click', () => {
+    currentIndex = index;
+    showImage();
+    lightbox.style.display = "flex";
+  });
+});
+
+// إظهار الصورة حسب الرقم
+function showImage(){
+  lightboxImg.src = galleryImages[currentIndex].src;
+}
+
+// إغلاق
+closeBtn.addEventListener('click', () => {
+  lightbox.style.display = "none";
+});
+
+// تنقل يمين/يسار
+document.querySelector('.next').addEventListener('click', () => {
+  currentIndex = (currentIndex + 1) % galleryImages.length;
+  showImage();
+});
+
+document.querySelector('.prev').addEventListener('click', () => {
+  currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+  showImage();
+});
+
+// إغلاق عند الضغط خارج الصورة
+lightbox.addEventListener('click', (e)=>{
+  if(e.target === lightbox){
+    lightbox.style.display = "none";
+  }
+});
+</script>
