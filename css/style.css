@@ -136,7 +136,6 @@ footer {
     margin-top: 80px;
     opacity: 0.9;
 }
-
 /* ========== GALLERY ========== */
 .gallery{
   max-width:1100px;
@@ -170,7 +169,6 @@ footer {
   top:0;left:0;
   width:100%;height:100%;
   background:rgba(0,0,0,0.85);
-  display:flex;
   align-items:center;
   justify-content:center;
 }
@@ -182,7 +180,6 @@ footer {
   box-shadow:0 0 25px rgba(0,230,214,0.4);
 }
 
-/* Close Button */
 .lightbox .close{
   position:absolute;
   top:20px;right:30px;
@@ -193,7 +190,6 @@ footer {
 }
 .lightbox .close:hover{color:#00e6d6}
 
-/* Navigation Buttons */
 .lightbox-nav{
   position:absolute;
   top:50%;
@@ -210,7 +206,6 @@ footer {
 .prev{left:30px}
 .next{right:30px}
 
-/* Responsive */
 @media(max-width:600px){
   .gallery img{
     height:160px;
@@ -219,3 +214,4 @@ footer {
     font-size:40px;
   }
 }
+
